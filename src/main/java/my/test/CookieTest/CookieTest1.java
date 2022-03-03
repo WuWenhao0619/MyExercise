@@ -12,6 +12,8 @@ public class CookieTest1 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         final Enumeration<String> headerNames = req.getHeaderNames();
+        final String remoteHost = req.getRemoteHost();
+        System.out.println(remoteHost);
         req.getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 
